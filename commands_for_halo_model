@@ -1,0 +1,4 @@
+### command to run halo-models
+
+compile: iree-compile --iree-hal-target-backends=rocm --iree-hip-target=gfx942 -o llama3.1_8b_fp16_decomposed_tp8.vmfb llama8b_f16.mlir
+iree-benchmark-module: iree-benchmark-module --device=hip://0 --hip_use_streams=true --hip_allow_inline_execution=true --device_allocator=caching --module=./llama3.1_8b_fp16_decomposed_tp8.vmfb --parameters=model=./8b_f16.irpa --function=prefill_bs4 --input=@/data/llama-3.1/8b/prefill_args/tokens.npy --input=@/data/llama-3.1/8b/prefill_args/seq_lens.npy --input=@/data/llama-3.1/8b/prefill_args/seq_block_ids.npy --input=@/data/llama-3.1/8b/prefill_args/cache_state_f16.npy --benchmark_repetitions=3
