@@ -120,7 +120,7 @@ jx_nest_small
 jx_nest_tiny
 
 
-failed to legalize unresolved materialization from ('i64') to 'index' that remained live after conversion:1
+failed to legalize unresolved materialization from ('i64') to 'index' that remained live after conversion:1 https://github.com/iree-org/iree/issues/18899
 ===
 model--long-t5-tglobal-base-16384-booksum-V12--pszemraj
 
