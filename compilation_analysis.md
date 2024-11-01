@@ -131,6 +131,8 @@ model--splinter-large-few-shot-k-16-finetuned-squad-seed-0--anas-awadalla
 model--splinter-large-few-shot-k-16-finetuned-squad-seed-2--anas-awadalla
 model--splinter-large-few-shot-k-16-finetuned-squad-seed-4--anas-awadalla
 model--splinter-large-few-shot-k-32-finetuned-squad-seed-2--anas-awadalla
+KeypointRCNN_vaiq_int8
+retinanet_resnet50_fpn_vaiq_int8
 
 
 vm.div.i64.u' op is a divide by constant zero : 3
@@ -156,10 +158,6 @@ failed to legalize operation 'torch.aten.convolution' that was explicitly marked
 model--squeezebert-uncased-finetuned-squad--SupriyaArun
 
 
-failed to legalize operation onnx.if: 1
-===
-KeypointRCNN_vaiq_int8
-retinanet_resnet50_fpn_vaiq_int8
 
 
 'vector.shape_cast' op source/result number of elements must match: 1
