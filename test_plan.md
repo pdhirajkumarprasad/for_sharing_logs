@@ -1,7 +1,10 @@
-Trying shortfin_apps.sd.server with different options like
 
-| Flags | options |
-|---|---|---|
+
+## shortfin_apps.sd.server with different options:
+
+
+| Flags | options |Verification Owner|Issues|
+|---|---|---|---|
 |--host HOST |
 |--port PORT |
 |--root-path ROOT_PATH |
