@@ -1,4 +1,7 @@
+## Testing strategy
 
+- Running multiple server on same machine with different port
+- Should not downloand artifacts when path is provided
 
 ## shortfin_apps.sd.server with different options:
 
@@ -25,3 +28,16 @@
 | --compile_flags |
 | --flagfile FLAGFILE |  
 | --artifacts_dir ARTIFACTS_DIR |
+
+
+
+## shortfin_apps.sd.server with different options:
+
+| Flags | Verification Owner|Issues||
+|---|---|---|---|
+|--file|
+|--reps|
+|--save|
+|--outputdir|
+|--steps|
+|--interactive|
