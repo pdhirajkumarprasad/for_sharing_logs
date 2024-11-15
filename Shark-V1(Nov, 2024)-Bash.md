@@ -39,4 +39,19 @@ nanobind: leaked 128 instances!
 
 - for outputdir, when I am providing 'abc' it creates and saves image into that directory but if I am providing 'abc/xyz', it's erroring out saying no such directory. Should not we create directory and save the image?
 - In interactive mode, we don't have clean way to exit. Better to add that. Currently we can do with 'Ctrl+C' but it's like hard exit
-- 
+
+
+### different options on server side
+- Following help option should be removed from user_guide
+  ```
+  --root-path ROOT_PATH
+  ```
+- Following help option is missing from user_guide
+  ```
+  --tuning_spec TUNING_SPEC
+                        Path to transform dialect spec if compiling an executable with tunings.
+  --topology {spx_single,cpx_single,spx_multi,cpx_multi}
+                        Use one of four known performant preconfigured device/fiber topologies.
+  --use_tuned USE_TUNED
+                        Use tunings for attention and matmul ops. 0 to disable.
+```
