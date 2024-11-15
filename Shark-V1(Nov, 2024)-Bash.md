@@ -43,11 +43,14 @@ nanobind: leaked 128 instances!
 
 ### different options on server side
 - Following help option should be removed from user_guide
-  ```
+
+```
   --root-path ROOT_PATH
-  ```
+```
+
 - Following help option is missing from user_guide
-  ```
+
+```
   --tuning_spec TUNING_SPEC
                         Path to transform dialect spec if compiling an executable with tunings.
   --topology {spx_single,cpx_single,spx_multi,cpx_multi}
@@ -55,3 +58,43 @@ nanobind: leaked 128 instances!
   --use_tuned USE_TUNED
                         Use tunings for attention and matmul ops. 0 to disable.
 ```
+
+- when device is 'local-task', getting below error. Is that expected?
+
+```
+[2024-11-14 22:24:59.950] [info] [service.py:135] Loading inference program: clip, worker index: 0, device: [Device(name='hostcpu:0:0@0', ordinal=0:0, node_affinity=5, capabilities=0x1)]
+[2024-11-14 22:24:59.950] [info] [manager.py:40] Shutting down system manager
+INFO:root:System manager command processor stopped
+2024-11-14 22:25:00 - ERROR - Traceback (most recent call last):
+  File "/temp_dir_by_dhiraj/gitRepo/SHARK-Platform/.venv/lib/python3.12/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/temp_dir_by_dhiraj/gitRepo/SHARK-Platform/.venv/lib/python3.12/site-packages/shortfin_apps/sd/server.py", line 51, in lifespan
+    service.start()
+  File "/temp_dir_by_dhiraj/gitRepo/SHARK-Platform/.venv/lib/python3.12/site-packages/shortfin_apps/sd/components/service.py", line 138, in start
+    self.inference_programs[worker_idx][component] = sf.Program(
+                                                     ^^^^^^^^^^^
+ValueError: <vm>:0: INCOMPATIBLE; HAL device `__device_0` not found or unavailable: #hal.device.target<"hip", [#hal.executable.target<"rocm", "rocm-hsaco-fb", {abi = "hip", iree.gpu.target = #iree_gpu.target<arch = "gfx942", features = "", wgp = <compute =  fp64|fp32|fp16|int64|int32|int16|int8, storage =  b64|b32|b16|b8, subgroup =  shuffle|arithmetic, dot =  dp4xi8toi32, mma = [<MFMA_F32_16x16x4_F32>, <MFMA_F32_16x16x16_F16>, <MFMA_F32_32x32x8_F16>, <MFMA_F32_16x16x16_BF16>, <MFMA_F32_32x32x8_BF16>, <MFMA_F32_16x16x32_F8E4M3FNUZ>, <MFMA_F32_16x16x32_F8E5M2FNUZ>, <MFMA_I32_16x16x32_I8>, <MFMA_I32_32x32x16_I8>], subgroup_size_choices = [64], max_workgroup_sizes = [1024, 1024, 1024], max_thread_count_per_workgroup = 1024, max_workgroup_memory_bytes = 65536, max_workgroup_counts = [2147483647, 2147483647, 2147483647], max_load_instruction_bits = 128, simds_per_wgp = 4, vgpr_space_bits = 16384>>, ukernels = "none"}>]>; 
+```
+
+- Impact of option like 'worker_per_device/fiber_per_device' not clear as I don't see any ipact of this. Even it takes '-1/0' value .
+- with --artifact_flag or even without, it's wiating for 3/4 minutes after this. why?
+
+```
+Servicing 3 outstanding tasks
+Completed BuildEntrypoint(path='sdxl')
+Servicing 2 outstanding tasks
+Completed Compiling BuildFile[gen](sdxl/stable_diffusion_xl_base_1_0_clip_bs1_64_fp16.mlir) (for amdgpu-gfx942)
+Servicing 1 outstanding tasks
+Completed BuildFile[bin](sdxl/stable_diffusion_xl_base_1_0_clip_bs1_64_fp16_amdgpu-gfx942.vmfb)
+Servicing 5 outstanding tasks
+Completed BuildFile[gen](sdxl/stable_diffusion_xl_base_1_0_punet_dataset_i8.irpa)
+Completed BuildFile[gen](sdxl/stable_diffusion_xl_base_1_0_punet_bs1_64_1024x1024_i8.mlir)
+Scheduling action: Compiling BuildFile[gen](sdxl/stable_diffusion_xl_base_1_0_punet_bs1_64_1024x1024_i8.mlir) (for amdgpu-gfx942)
+Servicing 3 outstanding tasks
+Completed BuildEntrypoint(path='sdxl')
+```  
+ 
