@@ -35,4 +35,8 @@ nanobind: leaked 128 instances!
  - leaked instance 0x7ff573f40a88 of type "_shortfin_default.lib.local.ProgramFunction"
 ```
 
+#### different options on client side
 
+- for outputdir, when I am providing 'abc' it creates and saves image into that directory but if I am providing 'abc/xyz', it's erroring out saying no such directory. Should not we create directory and save the image?
+- In interactive mode, we don't have clean way to exit. Better to add that. Currently we can do with 'Ctrl+C' but it's like hard exit
+- 
