@@ -11,7 +11,7 @@
 |sequencer2d_l|compilation| Fail to legalize : ONNX.LSTM|[modelDev-947](https://github.com/nod-ai/SHARK-ModelDev/issues/947)|
 |KeypointRCNN_vaiq_int8|compilation| Fail to legalize : ONNX.IF||
 |retinanet_resnet50_fpn_vaiq_int8|compilation| 'tensor.dim' op unexpected during shape cleanup; dynamic dimensions must have been resolved prior to leaving the flow dialect|[iree-19474](https://github.com/iree-org/iree/issues/19474)|
-|migraphx_bert__bertsquad-12|compilation|expected type to be 'tensor<?x?x?xf32>' or a rank-reduced version. (size mismatch)||
+|migraphx_bert__bertsquad-12|compilation|expected type to be 'tensor<?x?x?xf32>' or a rank-reduced version. (size mismatch)|generated IR is wrong as split OPs don't have split size specified |
 |migraphx_onnx-model-zoo__gpt2-10|compilation|'hal.tensor.barrier' op failed to verify that all of {sources, results} have same type||
 
 ### CPU only : NONE
