@@ -8,7 +8,7 @@
 |migraphx_sd__unet__model|import|Assertion `g.get() != nullptr` failed: Warning: onnx version converter is unable to parse input model||
 |migraphx_sdxl__unet__model|import| Assertion `version >= version_range.first && version <= version_range.second` failed: Warning: invalid version||
 |resnest50d_1s4x24d_vaiq | compilation |'memref.copy' op write affecting operations on global resources are restricted to workgroup distributed contexts | https://github.com/iree-org/iree/issues/19760 |
-|sequencer2d_l|compilation| Fail to legalize : ONNX.LSTM||
+|sequencer2d_l|compilation| Fail to legalize : ONNX.LSTM|https://github.com/nod-ai/SHARK-ModelDev/issues/947|
 |KeypointRCNN_vaiq_int8|compilation| Fail to legalize : ONNX.IF||
 |retinanet_resnet50_fpn_vaiq_int8|compilation| 'tensor.dim' op unexpected during shape cleanup; dynamic dimensions must have been resolved prior to leaving the flow dialect||
 |migraphx_bert__bertsquad-12|compilation|expected type to be 'tensor<?x?x?xf32>' or a rank-reduced version. (size mismatch)||
