@@ -32,15 +32,25 @@ getting error as
 INFO:hf-to-gguf:Loading model: my_model
 ERROR:hf-to-gguf:Model MistralModel is not supported
 ```
-but it works file if I use cli
+but it works fine if I use cli for downloading
 
 
-## Status
-- Sglang-shortfin run fp16 models
-
-|model| TP| status
-|---|---|---|
-|Llama-3.1-8B-Instruct| tp-1 | PASS
-|Llama-3.1-8B-Instruct| tp-8 | Failed during iree-compile : error: failed to solve for affinity analysis
+4> with flux1.dev, I am seeing error as
+```
+ERROR: Building 'Fetch https://sharkpublic.blob.core.windows.net/sharkpublic/flux.1/weights/exported_parameters_bf16/flux_dev_sampler_bf16.irpa' failed:
+    Traceback (most recent call last):
+      File "/home/dhirajp/march_25/.venv/lib/python3.11/site-packages/iree/build/executor.py", line 416, in invoke
+        self._invoke()
+      File "/home/dhirajp/march_25/.venv/lib/python3.11/site-packages/shortfin_apps/utils.py", line 222, in _invoke
+        self._invoke(retries=retries)
+      File "/home/dhirajp/march_25/.venv/lib/python3.11/site-packages/shortfin_apps/utils.py", line 222, in _invoke
+        self._invoke(retries=retries)
+      File "/home/dhirajp/march_25/.venv/lib/python3.11/site-packages/shortfin_apps/utils.py", line 222, in _invoke
+        self._invoke(retries=retries)
+      [Previous line repeated 1 more time]
+      File "/home/dhirajp/march_25/.venv/lib/python3.11/site-packages/shortfin_apps/utils.py", line 224, in _invoke
+        raise IOError(f"Failed to fetch URL '{self.url}': {e}") from None
+    OSError: Failed to fetch URL 'https://sharkpublic.blob.core.windows.net/sharkpublic/flux.1/weights/exported_parameters_bf16/flux_dev_sampler_bf16.irpa': HTTP Error 404: The specified blob does not exist.
+```
 
 
