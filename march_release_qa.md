@@ -32,7 +32,9 @@ getting error as
 INFO:hf-to-gguf:Loading model: my_model
 ERROR:hf-to-gguf:Model MistralModel is not supported
 ```
-but it works fine if I use cli for downloading
+but it works fine if I use cli for downloading.
+
+On serving side, on 1st run, it's giving empty o/p and then garbage value on restart
 
 
 4> with flux1.dev, I am seeing error as
