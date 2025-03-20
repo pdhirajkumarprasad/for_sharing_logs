@@ -55,4 +55,12 @@ ERROR: Building 'Fetch https://sharkpublic.blob.core.windows.net/sharkpublic/flu
     OSError: Failed to fetch URL 'https://sharkpublic.blob.core.windows.net/sharkpublic/flux.1/weights/exported_parameters_bf16/flux_dev_sampler_bf16.irpa': HTTP Error 404: The specified blob does not exist.
 ```
 
+5> For any model, when trying with sharded version, getting error during compile time
+```
+./my_model/mistral_nemo_base_tp8.mlir:3:1: error: failed to solve for affinity analysis
+module @module {
+^
+./my_model/mistral_nemo_base_tp8.mlir:3:1: note: see current operation: 
+"builtin.module"() <{sym_name = "module"}> ({
+```
 
