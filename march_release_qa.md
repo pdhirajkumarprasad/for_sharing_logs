@@ -1,3 +1,7 @@
+Following steps mentioned here for nightly
+
+https://github.com/nod-ai/shark-ai/blob/main/docs/shortfin/llm/user/llama_serving.md
+
 1>	This should be pulled before shark-ai[app] installation so that it become valid when someone is trying nightly
 ```
 # Fast installation of torch with just CPU support.
@@ -52,7 +56,7 @@ ERROR: Building 'Fetch https://sharkpublic.blob.core.windows.net/sharkpublic/flu
       [Previous line repeated 1 more time]
       File "/home/dhirajp/march_25/.venv/lib/python3.11/site-packages/shortfin_apps/utils.py", line 224, in _invoke
         raise IOError(f"Failed to fetch URL '{self.url}': {e}") from None
-    OSError: Failed to fetch URL 'https://sharkpublic.blob.core.windows.net/sharkpublic/flux.1/weights/exported_parameters_bf16/flux_dev_sampler_bf16.irpa': HTTP Error 404: The specified blob does not exist.
+    OSError: Failed to fetch URL '.../exported_parameters_bf16/flux_dev_sampler_bf16.irpa': HTTP Error 404: The specified blob does not exist.
 ```
 
 5> For any model, when trying with sharded version, getting error during compile time
