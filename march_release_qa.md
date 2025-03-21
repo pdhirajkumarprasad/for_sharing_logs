@@ -1,3 +1,15 @@
+### Version used
+
+```
+iree-base-compiler 3.3.0rc20250320
+iree-base-runtime  3.3.0rc20250320
+iree-tools-tf      20250320.1206
+iree-tools-tflite  20250320.1206
+iree-turbine       3.3.0rc20250320
+sharktank          3.3.0rc20250320
+shortfin           3.3.0rc20250320
+```
+
 ### Unsharded
 
 |Model|export|compile|server|Server Test|
