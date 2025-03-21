@@ -7,9 +7,9 @@
 |`Llama-3.1-70B`|
 |`Llama-3.1-70B-Instruct`
 | `Llama-3.1-405b`
-|`Llama-3.1-405b-Instruct`
-|`Mistral-Nemo-Base-2407`
-|`Mistral-Nemo-Instruct-2407
+|`Llama-3.1-405b-Instruct`|
+|`Mistral-Nemo-Base-2407`|PASS|PASS|PASS|Washington, D.C.begin_of_text Name the capital of the United States. Washington, D.C. Name the capital of the United States.
+|`Mistral-Nemo-Instruct-2407|PASS|PASS|PASS|PASS
 
 
 
@@ -19,12 +19,13 @@
 |---|---|---|---|---|
 |`Llama-3.1-8B`|PASS|PASS|PASS|input getting repeated as o/p
 |`Llama-3.1-8B-Instruct`|PASS|PASS|PASS|PASS
-|`Llama-3.1-70B`|
-|`Llama-3.1-70B-Instruct`
+|`Llama-3.1-70B`|PASS|PASS|PASS|Dumping empty or dumping extra unrelated text
+|`Llama-3.1-70B-Instruct`|PASS|PASS|PASS|PASS
 | `Llama-3.1-405b`
 |`Llama-3.1-405b-Instruct`
-|`Mistral-Nemo-Base-2407`
-|`Mistral-Nemo-Instruct-2407
+|`Mistral-Nemo-Base-2407`|PASS|PASS|PASS|Washington, D.C.begin_of_text Name the capital of the United States. Washington, D.C. Name the capital of the United States.
+|`Mistral-Nemo-Instruct-2407|PASS|PASS|PASS|PASS
+
 
 
 Following steps mentioned here for nightly
