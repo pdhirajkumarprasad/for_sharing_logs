@@ -1,3 +1,32 @@
+### Unsharded
+
+|Model|export|compile|server|Server Test|
+|---|---|---|---|---|
+|`Llama-3.1-8B`|PASS|PASS|PASS|input getting repeated as o/p
+|`Llama-3.1-8B-Instruct`|PASS|PASS|PASS|PASS
+|`Llama-3.1-70B`|
+|`Llama-3.1-70B-Instruct`
+| `Llama-3.1-405b`
+|`Llama-3.1-405b-Instruct`
+|`Mistral-Nemo-Base-2407`
+|`Mistral-Nemo-Instruct-2407
+
+
+
+### Sharded : TP8
+
+|Model|export|compile|server|Server Test|
+|---|---|---|---|---|
+|`Llama-3.1-8B`|PASS|PASS|PASS|input getting repeated as o/p
+|`Llama-3.1-8B-Instruct`|PASS|PASS|PASS|PASS
+|`Llama-3.1-70B`|
+|`Llama-3.1-70B-Instruct`
+| `Llama-3.1-405b`
+|`Llama-3.1-405b-Instruct`
+|`Mistral-Nemo-Base-2407`
+|`Mistral-Nemo-Instruct-2407
+
+
 Following steps mentioned here for nightly
 
 https://github.com/nod-ai/shark-ai/blob/main/docs/shortfin/llm/user/llama_serving.md
