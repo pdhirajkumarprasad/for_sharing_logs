@@ -100,6 +100,25 @@ FileNotFoundError: [Errno 2] No such file or directory: 'python/shortfin_apps/fl
 
 4> Should be add detail about port like https://github.com/nod-ai/shark-ai/blob/main/docs/shortfin/llm/user/llama_serving.md#3-run-the-shortfin-llm-server ?
 
-5> 
+5> Flux-dev is working with flux-schnell is failing as we don't have json file
+```
+python -m shortfin_apps.flux.server --model_config=./python/shortfin_apps/flux/examples/flux_schnell_config_mixed.json --device=amdgpu --fibers_per_device=1 --workers_per_device=1 --isolation="per_fiber" --build_preference=precompiled
+Successfully built 2 actions
+[2025-03-23 22:28:21.944] [info] [utils.py:84] Created local system with ['amdgpu:7:0@0', 'amdgpu:6:0@0', 'amdgpu:5:0@0', 'amdgpu:4:0@0', 'amdgpu:3:0@0', 'amdgpu:2:0@0', 'amdgpu:1:0@0', 'amdgpu:0:0@0'] devices
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/dhirajp/march_25/shortfin/.venv/lib/python3.11/site-packages/shortfin_apps/flux/server.py", line 422, in <module>
+    main(
+  File "/home/dhirajp/march_25/shortfin/.venv/lib/python3.11/site-packages/shortfin_apps/flux/server.py", line 410, in main
+    configure_service(args, sysman, model_config, flagfile, tuning_spec)
+  File "/home/dhirajp/march_25/shortfin/.venv/lib/python3.11/site-packages/shortfin_apps/flux/server.py", line 126, in configure_service
+    model_params = ModelParams.load_json(model_config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dhirajp/march_25/shortfin/.venv/lib/python3.11/site-packages/shortfin_apps/flux/components/config_struct.py", line 106, in load_json
+    with open(path, "rt") as f:
+         ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'python/shortfin_apps/flux/examples/flux_schnell_config_mixed.json'
+```
 
 
